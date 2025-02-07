@@ -27,10 +27,6 @@ export const Formulario2 = () => {
   const compararNumeros = () => {
     const { num1, num2 } = numeros;
 
-    if (isNaN(num1) || isNaN(num2)) {
-      setResultado('Ingresa números válidos.');
-      return;
-    }
 
     if (num1 === num2) {
       setResultado('Los números son iguales.');
