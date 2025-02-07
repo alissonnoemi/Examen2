@@ -12,7 +12,7 @@ interface Props {
 
 export const InputComponent = ({ placeholder, keyboardType, handleChange, name, value }: Props) => {
     const handleTextChange = (text: string) => {
-        const numericValue = text.replace(/[^0-9]/g, ''); 
+        const numericValue = text.replace('', ''); 
         handleChange(name, numericValue); 
     };
 

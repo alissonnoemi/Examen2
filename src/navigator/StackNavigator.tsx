@@ -2,9 +2,10 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Imagen1 } from '../screens/Imagen1';
 import { Imagen2 } from '../screens/Imagen2';
-import { Formulario } from '../screens/Formulario';
+
 import { Formulario2 } from '../screens/Formulario2';
 import { Home } from '../screens/Home';
+import { Formulario } from '../screens/Formulario';
 
 type RootStackParams = {
     Home: undefined,

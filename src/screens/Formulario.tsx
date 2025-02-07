@@ -28,18 +28,18 @@ export const Formulario = () => {
         const { num1, num2 } = numeros;
 
         if (isNaN(num1) || isNaN(num2)) {
-            setResultado('ingresa números válidos.');
+            setResultado('Ingresa números válidos.');
             return;
         }
 
-        const mayorOigual = [];
-        for (let i = Math.min(num1, num2); i <= Math.max(num1, num2); i++) {
-            mayorOigual.push(i);
+        if (num1 === num2) {
+            setResultado('Los números son iguales.');
+        } else if (num1 > num2) {
+            setResultado(`${num1} es mayor que ${num2}.`);
+        } else {
+            setResultado(`${num2} es mayor que ${num1}.`);
         }
-
-        setResultado(mayorOigual.join(', '));
     };
-
 
     return (
         <View>
@@ -63,9 +63,11 @@ export const Formulario = () => {
                     style={styles.button}
                     onPress={compararNumeros}
                 >
-                    <Text>{'>='}</Text>
+                    <Text>{'<='}</Text>
                 </TouchableOpacity>
                 <Text>{resultado}</Text>
+
+
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Formulario2' }))}
